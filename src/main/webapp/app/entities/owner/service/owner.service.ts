@@ -8,7 +8,7 @@ import { isPresent } from 'app/core/util/operators';
 import { DATE_FORMAT } from 'app/config/input.constants';
 import { ApplicationConfigService } from 'app/core/config/application-config.service';
 import { createRequestOption } from 'app/core/request/request-util';
-import { IOwner, getOwnerIdentifier, Owner } from '../owner.model';
+import { IOwner, getOwnerIdentifier } from '../owner.model';
 
 export type EntityResponseType = HttpResponse<IOwner>;
 export type EntityArrayResponseType = HttpResponse<IOwner[]>;

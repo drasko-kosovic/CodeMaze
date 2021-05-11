@@ -1,6 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { HttpResponse } from '@angular/common/http';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 
 import { IOwner } from '../owner.model';
 import { OwnerService } from '../service/owner.service';
@@ -14,12 +12,12 @@ import { MatPaginator } from '@angular/material/paginator';
   templateUrl: './owner.component.html',
   styleUrls: ['./owner.component.scss'],
 })
-export class OwnerComponent implements OnInit {
+export class OwnerComponent implements OnInit, AfterViewInit {
   public displayedColumns = ['name', 'address'];
   public dataSource = new MatTableDataSource<IOwner>();
 
-  @ViewChild(MatSort) sort?: MatSort;
-  @ViewChild(MatPaginator) paginator?: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(private repoService: OwnerService) {}
 
@@ -33,10 +31,10 @@ export class OwnerComponent implements OnInit {
     });
   };
 
-  // ngAfterViewInit(): void {
-  //   this.dataSource.sort = this.sort;
-  //   this.dataSource.paginator = this.paginator;
-  // }
+  ngAfterViewInit(): void {
+    this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
+  }
 
   public doFilter = (value: string): any => {
     this.dataSource.filter = value.trim().toLocaleLowerCase();
