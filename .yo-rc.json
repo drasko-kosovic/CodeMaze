@@ -41,6 +41,8 @@
     "packageFolder": "maze",
     "jwtSecretKey": "YTM1MTkwNjNjN2I2MmRiMWY4YjgzOGE4ZmIxYmQ5OWQ0MDZiOTQ5OTAwZmY2NWU3MzkwMjFiZWNhYjRjYzc0YWQ0OTFjOWM5NmIwY2I4NDg0YWVhNjY1MTFjZDY3ZWJjM2UwYmMzNzU3MzJkZThlNTFjYTg1MzA4YTdjYzViNWI=",
     "clientPackageManager": "npm",
-    "languages": ["en", "fr"]
+    "languages": ["en", "fr"],
+    "lastLiquibaseTimestamp": 1620748319000,
+    "entities": ["Owner"]
   }
 }
